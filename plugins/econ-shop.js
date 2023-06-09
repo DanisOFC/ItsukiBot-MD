@@ -8,7 +8,7 @@ let handler = async (m, { conn, command, args }) => {
     global.db.data.users[m.sender].limit += count
     conn.reply(m.chat, `
 ┌─「 *NOTA DE PAGO* 」
-‣ *Compra nominal* : + ${{count}💎 
+‣ *Compra nominal* : + ${count}💎 
 ‣ *Gastado* : -${xpperlimit * count} XP
 └──────────────`, m)
   } else conn.reply(m.chat, `❎ Lo siento, no tienes suficientes *XP* para comprar *${count}* Diamantes💎\n\n Puedes conseguir *XP* usando los comandos del *menú juegos y economía*`, m)
