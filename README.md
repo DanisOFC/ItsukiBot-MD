@@ -149,12 +149,6 @@
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=DanisOFC&layout=compact&theme=chartreuse-dark)
 
 ---------
- [![おDɑniel](https://github.com/DanisOFC.png?size=100)](https://github.com/DanisOFC) | [![GB](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
-----|----
-[おDɑniel](https://github.com/DanisOFC) | [GatɑNinɑ-Li](https://github.com/GataNina-Li)
-Recodificador | Creador
-
----------
 <div align="center">
   <h1 align="center">Editor y Propietαrio de lα Bot</h1>
 
