@@ -156,7 +156,7 @@ Recodificador | Creador
 
 ---------
 <div align="center">
-  <h1 align="center">Editor y propietario del Bot</h1>
+  <h1 align="center">Editor y Propietαrio de lα Bot</h1>
 
 <a href="https://github.com/DanisOFC"><img src="https://github.com/DanisOFC.png" width="300" height="300" alt="おDaniel"/></a>
 
