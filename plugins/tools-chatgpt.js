@@ -1,25 +1,12 @@
-import fetch from 'node-fetch' 
- let handler = async (m, { text, usedPrefix, command }) => { 
- if (!text) throw `*_🪻 • Ingrese su petición._*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer un gatito con papel` 
- m.reply(wait)
- try { 
- let IA2 = await fetch(`https://api.amosayomide05.cf/gpt/?question=${text}&string_id=${m.sender}`)   
- let IAR2 = await IA2.json() 
- m.reply(`${IAR2.response}`.trim())     
- } catch { 
- try {    
- let rrEes = await fetch(`https://api.ibeng.tech/api/info/openai?text=${text}&apikey=tamvan`) 
- let jjJson = await rrEes.json() 
- m.reply(jjJson.data.data.trim())     
- } catch {       
- try {     
- let tioress = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=BrunoSobrino&text=${text}&user=${m.sender}`) 
- let hasill = await tioress.json() 
- m.reply(`${hasill.result}`.trim())    
- } catch {         
- throw `*_⚠️ Error, inténtelo más tarde._*` 
- }}}} 
- handler.help = ['openai <petición>', 'ia <petición>']
+import fetch from 'node-fetch'
+let handler = async (m, { text,  usedPrefix,  command }) => {
+    if (!text) throw `*_🪻 • Ingrese su petición._*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer un gatito con papel` 
+m.reply(wait)
+let yuta = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=SGWN&text=${text}&user=user-unique-id`)
+let hasil = await yuta.json()
+ m.reply(`${hasil.result}`.trim())
+    }  
+handler.help = ['itsuki <petición>']
  handler.tags = ['tools']
- handler.command = ['openai', 'chatgpt', 'ia', 'robot', 'ai'] 
+ handler.command = ['openai', 'chatgpt', 'ia', 'itsuki', 'ai'] 
  export default handler
