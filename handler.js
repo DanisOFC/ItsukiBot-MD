@@ -1294,7 +1294,7 @@ function _0x1ce7(){const _0xac1ac2=['212872fjshDh','17320yUXgkp','6019568oxJfgD'
                         }
                     }
                     if (m.limit)
-                        m.reply('*Utilizaste\t' +m.limit + '\t de tus diamantes 💎*')
+                        m.reply('*Utilizaste'+m.limit +'de tus diamantes 💎*')
                 }
                 break
             }
@@ -1374,49 +1374,27 @@ export async function participantsUpdate({ id, participants, action }) {
     let text = ''
     switch (action) {
         case 'add':
-case 'remove':
-if (chat.welcome) {
-let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-for (let user of participants) {
-let pp = gataMenu.getRandom()
-try {
-pp = await this.profilePictureUrl(user, 'image')
-} catch (e) {
-} finally {
-let apii = await this.getFile(pp)                                      
-const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
-const isBotAdminNn = botTt2?.admin === "admin" || false
-text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*Simple WhatsApp Bot*') :
-(chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-			    
-if (chat.antifake && isBotAdminNn && action === 'add') {
-const numerosPermitidos = ["1", "2", "4", "6", "7", "8", "9"] //PUEDES EDITAR LOS USUARIOS QUE SE ELIMINARÁN SI EMPIEZA POR CUALQUIER DE ESOS NÚMEROS	
-if (numerosPermitidos.some(num => user.startsWith(num))) {	
-this.sendMessage(id, { text:`✳️ En este grupo solo se permite personas de habla hispana`, mentions: [user] }, { quoted: null });          
-let responseb = await this.groupParticipantsUpdate(id, [user], 'remove')
-if (responseb[0].status === "404") return      
-return    
-}}
-let fkontak2 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }      
-conn.sendMessage(id, { image: apii.data, caption: text, mentions: [user]}, { quoted: fkontak2 })  
-//this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
-}}}
-			    
-break
-case 'promote':
-case 'daradmin':
-case 'darpoder':
-text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
-case 'demote':
-case 'quitarpoder':
-case 'quitaradmin':
-if (!text)
-text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
-text = text.replace('@user', '@' + participants[0].split('@')[0])
-if (chat.detect)
-this.sendMessage(id, { text, mentions: this.parseMention(text) })
-break
-}}
+        case 'remove':
+            if (chat.welcome) {
+                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                for (let user of participants) {
+                    let pp = './src/avatar_contact.png'
+                    try {
+                        pp = await this.profilePictureUrl(user, 'image')
+                    } catch (e) {
+                    } finally {
+                    let apii = await this.getFile(pp)
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*No hay reglas*') :
+                              (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                        
+ this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] })
+                   }
+                }
+            }
+            break
+
+    }
+}
 
 /**
  * Handle groups update
@@ -1446,8 +1424,6 @@ export async function callUpdate(callUpdate) {
     if (nk.isGroup == false) {
     if (nk.status == "offer") {
     let callmsg = await this.reply(nk.from, `Hola *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'videollamadas' : 'llamadas'} no están permitidas, serás bloqueado.\n-\nSi accidentalmente llamaste póngase en contacto con mi creador para que te desbloquee!`, false, { mentions: [nk.from] })
-    //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
-    //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
     await this.updateBlockStatus(nk.from, 'block')
     }}}}
 
