@@ -14,8 +14,9 @@ let handler = async (m, { conn, command, args }) => {
   } else conn.reply(m.chat, `❎ Lo siento, no tienes suficientes *XP* para comprar *${count}* Diamantes💎\n\n Puedes conseguir *XP* usando los comandos del *menú juegos y economía*`, m)
 }
 handler.help = ['Buy', 'Buyall']
-handler.tags = ['rpg']
+handler.tags = ['econ']
 handler.command = ['buy', 'buyall'] 
+
 handler.disabled = false
 
 export default handler
