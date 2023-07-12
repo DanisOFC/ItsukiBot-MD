@@ -1294,7 +1294,7 @@ function _0x1ce7(){const _0xac1ac2=['212872fjshDh','17320yUXgkp','6019568oxJfgD'
                         }
                     }
                     if (m.limit)
-                        m.reply('*Utilizaste\t'+m.limit +'\nde tus diamantes 💎*')
+                        m.reply('*Utilizaste '+m.limit +' de tus diamantes 💎*')
                 }
                 break
             }
