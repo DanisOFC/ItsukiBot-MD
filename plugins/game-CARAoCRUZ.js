@@ -2,7 +2,7 @@
 
 let handler = async (m, { conn, text, command, usedPrefix, args }) => {
 let pp = 'https://media.istockphoto.com/id/460171067/es/foto/sacudir-el-bot%C3%B3n.jpg?s=612x612&w=0&k=20&c=TsX1krTyz8oyRNhpcbri4dguh3WyAZwYOwMu2T68S2A='
-await conn.reply(m.chat, '*Cara o Cruz*\n\nElije una opción\n.suerte cruz\n.suerte cara\n\n usar en minúsculas', m)
+ if (!text) throw `*Cara o Cruz*\n\nElije una opción\n${usedPrefix}suerte cruz\n${usedPrefix}suerte cara\n\n usar en minúsculas`
 var astro = Math.random()
 if (astro < 0.50) {//34
     astro = 'cara'
