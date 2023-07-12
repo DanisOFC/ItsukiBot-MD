@@ -88,15 +88,6 @@ throw false
 }
 global.opts['self'] = !isEnable
 break
-case 'modejadibot':
-case 'jadibot':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-bot.modejadibot = isEnable
-break
 		
 case 'autoread': case 'autovisto':
 isAll = true
@@ -140,7 +131,6 @@ if (!/[01]/.test(command)) throw `
 - detect
 - autoread 
 - restrict 
-- jadibot
 - document 
 - antiprivado 
 - antiarabes

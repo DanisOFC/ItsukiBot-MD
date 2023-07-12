@@ -19,18 +19,21 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
   let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
   let title = await yt.title
   let size = await (isVideo ? yt.video[q].fileSizeH : yt.audio[q].fileSizeH)
-  let play = `*Título:* ${vid.title}
-*Publicado:* ${vid.ago}
-*Duración:* ${vid.timestamp}
-*Vistas:* ${vid.views}`
+  let play = `╭─⬣「 *YouTube Play* 」⬣
+│  ≡◦ *🍭 Título:* ${vid.title}
+│  ≡◦ *📅 Publicado:* ${vid.ago}
+│  ≡◦ *🕜 Duración:* ${vid.timestamp}
+│  ≡◦ *👁 Vistas:*  ${vid.views}
+╰─⬣`
 conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null)
 
 if (size.split('MB')[0] >= limit) return m.reply(`_Archivo por encima de_ *+${limit}*`) 
 if (size.includes('GB')) return m.reply(`_Tu archivo supera mi límite es_ *+${limit} MB*`)   
-	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `*🍭 Título:* ${title}
-*🎞️ Calidad:* ${q}
-*⚖️ Peso:* ${size}
-`.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
+	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `╭─⬣「 *YouTube Play* 」⬣
+│  ≡◦   *🍭 Título:* ${title}
+│  ≡◦ *🎞️ Calidad:* ${q}
+│  ≡◦ *⚖️ Peso:* ${size}
+╰─⬣`.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
     } catch {
 		m.reply(global.eror)
     }

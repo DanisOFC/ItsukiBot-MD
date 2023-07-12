@@ -11,7 +11,7 @@ const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v)).catch(async
 const dl_url = await yt.video[q].download()
 const ttl = await yt.title
 const size = await yt.video[q].fileSizeH
-await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `*🍭 Título:* ${ttl}\n*⚖️ Peso:* ${size}`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭─⬣「 *YouTube Download* 」⬣\n│  ≡◦   *🍭 Título:* ${ttl}\n│  ≡◦ *⚖️ Peso:* ${size}\n╰─⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
 } catch {
 try {
 let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${args[0]}`)    
@@ -20,7 +20,7 @@ let n = lolh.result.title || 'error'
 let n2 = lolh.result.link
 let n3 = lolh.result.size
 let n4 = lolh.result.thumbnail
-await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `*🍭 Título:* ${n}\n*⚖️ Peso:* ${n3}`, thumbnail: await fetch(n4) }, { quoted: m })
+await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `╭─⬣「 *YouTube Download* 」⬣\n│  ≡◦   *🍭 Título:* ${n}\n│  ≡◦ *⚖️ Peso:* ${n3}\n╰─⬣`, thumbnail: await fetch(n4) }, { quoted: m })
 } catch {
 await conn.reply(m.chat, `*☓ Ocurrió un error inesperado*`, m)}
 }}
