@@ -19,16 +19,36 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   user.regTime = + new Date
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
-  m.reply(`
-┌─「 *REGISTRADO* 」─
+  let str = `┌─「 *REGISTRADO* 」─
 ▢ *Nombre:* ${name}
 ▢ *Edad* : ${age} años
 ▢ *Numero de serie* :
 ${sn}
 └──────────────
 
- *${usedPrefix}help* para ver el Menu
-`.trim())
+ *${usedPrefix}help* para ver el Menu`
+conn.sendMessage(
+    m.chat,
+    {
+      image: {
+        url: "https://telegra.ph/file/4a7e5f18efaadec18a7a0.jpg",
+      },
+      caption: str,
+      contextInfo: {
+        mentionedJid: [m.sender],
+        externalAdReply: {
+          title: botname,
+          sourceUrl: global.linkgc,
+          mediaType: 1,
+          showAdAttribution: true,
+          thumbnailUrl: "https://telegra.ph/file/4a337bdef796355491b43.jpg",
+        },
+      },
+    },
+    {
+      quoted: m,
+    }
+  );
 }
 handler.help = ['reg'].map(v => v + ' <nombre.edad>')
 handler.tags = ['rg']
